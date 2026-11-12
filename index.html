@@ -1,42 +1,258 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Importância de Ler “A Paixão Segundo G.H.” — Clarice Lispector</title>
-  <meta name="description" content="Um áudio sobre a importância de ler A Paixão Segundo G.H., de Clarice Lispector.">
-  <meta name="theme-color" content="#ebe3d3">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ebe3d3">
+<meta name="description" content="Uma experiência de áudio sobre A Paixão Segundo G.H.">
+<title>A Paixão Segundo G.H. — Clarice Lispector</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <a class="skip" href="#player">Ir para o player</a>
 
-  <header class="top">
-    <span class="mark">G.H.</span>
-    <nav aria-label="Principal">
-      <a href="#player">Ouvir</a>
-      <a href="#destaques">Destaques</a>
+<header class="top">
+    <a href="#inicio" class="logo">G.H.</a>
+
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#destaques">Destaques</a>
+        <button class="nav-listen" id="navListen">Ouvir áudio ↗</button>
     </nav>
-  </header>
+</header>
 
-  <main>
-    <!-- APRESENTAÇÃO -->
-    <section class="hero" id="inicio">
-      <p class="hero-g" aria-hidden="true">G.H.</p>
-      <div class="hero-text">
-        <h1>
-          <span class="pre">A Importância de Ler</span>
-          <span class="title">“A Paixão Segundo G.H.”</span>
-        </h1>
-        <p class="author">Clarice Lispector</p>
-        <p class="sub">Algumas leituras não terminam quando a última página acaba.</p>
-        <a class="btn" href="#player">Ouvir agora</a>
-      </div>
+<main id="inicio">
+
+    <section class="hero">
+
+        <div class="hero-watermark">G.H.</div>
+
+        <div class="hero-content">
+
+            <span class="eyebrow">UMA EXPERIÊNCIA LITERÁRIA</span>
+
+            <h1>
+                A Importância<br>
+                de Ler
+                <em>A Paixão<br>Segundo G.H.</em>
+            </h1>
+
+            <p class="author">Clarice Lispector</p>
+
+            <p class="hero-description">
+                Algumas leituras não terminam quando a última página acaba.
+            </p>
+
+            <button class="main-button" id="heroListen">
+                <span>▶</span>
+                Ouvir agora
+            </button>
+
+        </div>
+
+        <div class="hero-footer">
+            <span>CLARICE LISPECTOR</span>
+            <span>UMA REFLEXÃO EM ÁUDIO</span>
+            <span>01 — 01</span>
+        </div>
+
     </section>
 
-    <!-- PLAYER -->
-    <section class="player-sec" id="player" aria-labelledby="player-t" tabindex="-1">
-      <h2 id="player-t">Ouça</h2>
+    <section class="intro">
+
+        <div class="intro-label">01 / EXPERIÊNCIA</div>
+
+        <div class="intro-content">
+            <p class="intro-quote">
+                Uma experiência de escuta,
+                reflexão e descoberta.
+            </p>
+
+            <p class="intro-small">
+                Reserve alguns minutos.
+                Coloque seus fones.
+                Permita-se ouvir.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="highlights" id="destaques">
+
+        <div class="section-heading">
+            <span>02 / NO ÁUDIO</span>
+            <h2>Três caminhos<br>para a reflexão.</h2>
+        </div>
+
+        <div class="highlight-list">
+
+            <article class="highlight">
+                <span>01</span>
+                <h3>Autoconhecimento profundo</h3>
+                <span class="highlight-arrow">↗</span>
+            </article>
+
+            <article class="highlight">
+                <span>02</span>
+                <h3>Escrita intensa e simbólica</h3>
+                <span class="highlight-arrow">↗</span>
+            </article>
+
+            <article class="highlight">
+                <span>03</span>
+                <h3>Questionamentos existenciais</h3>
+                <span class="highlight-arrow">↗</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="closing">
+        <span>CLARICE LISPECTOR</span>
+        <h2>A Paixão<br><em>Segundo G.H.</em></h2>
+        <button class="closing-button" id="closingListen">
+            Começar a ouvir ↗
+        </button>
+    </section>
+
+</main>
+
+<!-- INTERFACE DE REPRODUÇÃO -->
+
+<div class="player-screen" id="playerScreen" aria-hidden="true">
+
+    <div class="player-top">
+        <button id="closePlayer" class="close-player">
+            ← Voltar ao site
+        </button>
+
+        <span>EXPERIÊNCIA DE ÁUDIO</span>
+
+        <span class="player-top-mark">G.H.</span>
+    </div>
+
+    <div class="player-main">
+
+        <div class="album-art">
+            <div class="art-inner">
+                <span class="art-small">CLARICE LISPECTOR</span>
+                <span class="art-title">G.H.</span>
+                <span class="art-bottom">A PAIXÃO SEGUNDO G.H.</span>
+            </div>
+        </div>
+
+        <div class="track-info">
+            <span class="track-label">REPRODUZINDO</span>
+
+            <h2>A Paixão Segundo G.H.</h2>
+
+            <p>Clarice Lispector</p>
+
+            <span class="track-subtitle">
+                A importância de ler
+            </span>
+        </div>
+
+        <div class="audio-controls">
+
+            <div class="progress-area">
+
+                <input
+                    type="range"
+                    id="progress"
+                    min="0"
+                    max="100"
+                    value="0"
+                    aria-label="Progresso do áudio"
+                >
+
+                <div class="time-row">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+
+            </div>
+
+            <div class="control-buttons">
+
+                <button id="backward" aria-label="Voltar 15 segundos">
+                    ↶ 15
+                </button>
+
+                <button id="playButton" class="play-button" aria-label="Reproduzir">
+                    ▶
+                </button>
+
+                <button id="forward" aria-label="Avançar 15 segundos">
+                    15 ↷
+                </button>
+
+            </div>
+
+            <div class="volume-area">
+                <span>VOLUME</span>
+                <input
+                    type="range"
+                    id="volume"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                    aria-label="Volume"
+                >
+            </div>
+
+        </div>
+
+        <p class="player-note" id="playerNote">
+            Uma experiência de escuta.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- MINI PLAYER FIXO -->
+
+<div class="mini-player" id="miniPlayer">
+
+    <div class="mini-track">
+        <div class="mini-cover">G.H.</div>
+
+        <div>
+            <strong>A Paixão Segundo G.H.</strong>
+            <span>Clarice Lispector</span>
+        </div>
+    </div>
+
+    <div class="mini-controls">
+        <button id="miniPlay" aria-label="Reproduzir ou pausar">▶</button>
+        <span id="miniTime">0:00</span>
+        <div class="mini-progress">
+            <div id="miniProgress"></div>
+        </div>
+        <span id="miniDuration">0:00</span>
+    </div>
+
+    <button id="expandPlayer" aria-label="Abrir player completo">
+        ⛶
+    </button>
+
+</div>
+
+<audio id="audio" preload="metadata">
+    <source src="paixao.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>
